@@ -1,22 +1,31 @@
-FROM node:20-alpine AS development-dependencies-env
-COPY . /app
-WORKDIR /app
-RUN npm ci
+# ==================== Etapa 1: Build ====================
+FROM node:22-alpine AS builder
 
-FROM node:20-alpine AS production-dependencies-env
-COPY ./package.json package-lock.json /app/
 WORKDIR /app
-RUN npm ci --omit=dev
 
-FROM node:20-alpine AS build-env
-COPY . /app/
-COPY --from=development-dependencies-env /app/node_modules /app/node_modules
-WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm ci --frozen-lockfile
+
+COPY . .
 RUN npm run build
 
-FROM node:20-alpine
-COPY ./package.json package-lock.json /app/
-COPY --from=production-dependencies-env /app/node_modules /app/node_modules
-COPY --from=build-env /app/build /app/build
+# ==================== Etapa 2: Producción ====================
+FROM node:22-alpine AS runner
+
 WORKDIR /app
-CMD ["npm", "run", "start"]
+
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/package-lock.json* ./
+
+RUN npm ci --frozen-lockfile --omit=dev && \
+    npm cache clean --force
+
+COPY --from=builder /app/build ./build
+
+# Permisos para los assets
+RUN chmod -R 755 /app/build/client
+
+USER node
+
+EXPOSE 3000
+CMD ["npm", "start"]
