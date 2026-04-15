@@ -1,3 +1,6 @@
+# Certificados Let's Encrypt / Certbot
+certbot/
+
 .DS_Store
 .env
 /node_modules/
