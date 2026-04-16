@@ -13,6 +13,47 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const links: Route.LinksFunction = () => [
+  // Favicon clásico
+  { rel: "icon", type: "image/x-icon", href: "/favicon/favicon.ico" },
+
+  // Favicons PNG para diferentes tamaños
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "16x16",
+    href: "/favicon/favicon-16x16.png",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "32x32",
+    href: "/favicon/favicon-32x32.png",
+  },
+
+  // Apple Touch Icon (para iOS)
+  {
+    rel: "apple-touch-icon",
+    sizes: "180x180",
+    href: "/favicon/apple-touch-icon.png",
+  },
+
+  // Android / Chrome icons
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "192x192",
+    href: "/favicon/android-chrome-192x192.png",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "512x512",
+    href: "/favicon/android-chrome-512x512.png",
+  },
+
+  // Web App Manifest
+  { rel: "manifest", href: "/favicon/site.webmanifest" },
+
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -29,6 +70,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <title> AgentFlou </title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
