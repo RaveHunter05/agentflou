@@ -30,9 +30,9 @@ export default function Terms() {
             <div>
               <h2 className="text-xl font-bold mb-3">1. Acceptance of Terms</h2>
               <p className="text-muted-foreground">
-                By accessing or using AgentFlou's services, you agree to be
-                bound by these Terms of Service. If you do not agree, please do
-                not use our platform.
+                By accessing or using AgentFlou’s services, you agree to be
+                bound by these Terms of Service. If you do not agree to these
+                terms, please do not use our platform.
               </p>
             </div>
 
@@ -41,11 +41,17 @@ export default function Terms() {
                 2. Description of Service
               </h2>
               <p className="text-muted-foreground">
-                AgentFlou provides an automated messaging agent platform that
-                enables businesses to communicate with customers across multiple
-                channels including WhatsApp, Messenger, Instagram, and other
-                platforms, with integrations to Google Sheets, databases, and
-                CRM systems.
+                AgentFlou is a SaaS platform designed for the integration and
+                orchestration of intelligent agents. It enables businesses to
+                create, deploy, manage, and automate AI-powered or rule-based
+                agents across multiple communication and collaboration channels,
+                including WhatsApp, Messenger, Instagram, Telegram, Email,
+                Slack, and other supported platforms. <br /> <br /> The service
+                allows seamless integration of these agents with external tools
+                such as Google Sheets, databases, CRM systems, ERP platforms,
+                and any system with an available API. This centralized approach
+                helps businesses automate customer support, sales, lead
+                generation, internal workflows, and other processes efficiently.
               </p>
             </div>
 
@@ -53,27 +59,35 @@ export default function Terms() {
               <h2 className="text-xl font-bold mb-3">3. User Accounts</h2>
               <p className="text-muted-foreground">
                 You are responsible for maintaining the confidentiality of your
-                account credentials. You agree to provide accurate information
-                and to notify us immediately of any unauthorized use of your
-                account.
+                account credentials. You agree to provide accurate and complete
+                information when registering and to notify us immediately of any
+                unauthorized access or use of your account.
               </p>
             </div>
 
             <div>
               <h2 className="text-xl font-bold mb-3">4. Acceptable Use</h2>
               <p className="text-muted-foreground">
-                You agree not to use AgentFlou for spam, harassment, illegal
-                activities, or any purpose that violates applicable laws or the
-                terms of the messaging platforms we integrate with.
+                You agree not to use AgentFlou for any unlawful, abusive, or
+                prohibited activities, including spam, harassment, fraud, or any
+                actions that violate applicable laws or the terms of service of
+                the third-party platforms we integrate with (such as WhatsApp
+                Business API, Meta, Telegram, etc.).
               </p>
             </div>
 
             <div>
               <h2 className="text-xl font-bold mb-3">5. Payment & Billing</h2>
               <p className="text-muted-foreground">
-                Paid plans are billed monthly or annually. Refunds are available
-                within the first 14 days. We reserve the right to modify pricing
-                with 30 days advance notice.
+                Paid plans are billed monthly or annually in advance. You may
+                request a refund within the first 14 days of your initial
+                subscription (subject to our refund policy and excluding cases
+                of abuse). We reserve the right to modify pricing with at least
+                30 days prior notice. <br /> <br /> Please note that fees
+                charged by third-party platforms (such as WhatsApp conversation
+                fees, Meta charges, email service providers, etc.) are not
+                included in AgentFlou’s pricing and are your sole
+                responsibility.
               </p>
             </div>
 
@@ -85,6 +99,11 @@ export default function Terms() {
                   Privacy Policy
                 </Link>
                 . We do not sell your data to third parties.
+                <br /> <br />
+                You remain fully responsible for ensuring that you have obtained
+                all required consents and permissions from your end users on
+                each communication channel, in compliance with applicable data
+                protection laws.
               </p>
             </div>
 
@@ -95,6 +114,11 @@ export default function Terms() {
               <p className="text-muted-foreground">
                 We strive for 99.9% uptime but do not guarantee uninterrupted
                 service. Scheduled maintenance will be communicated in advance.
+                <br /> <br />
+                We are not responsible for service interruptions caused by
+                third-party platforms (WhatsApp, Telegram, Meta, email
+                providers, Slack, etc.) or by factors beyond our reasonable
+                control.
               </p>
             </div>
 
@@ -125,8 +149,7 @@ export default function Terms() {
                 For questions about these terms, please{" "}
                 <Link to="/contact" className="text-primary hover:underline">
                   contact us
-                </Link>{" "}
-                or email legal@agentflou.com.
+                </Link>
               </p>
             </div>
           </section>
